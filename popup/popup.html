@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kill Switch</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img class="header__logo" src="../assets/images/logo.png" />
+      <div class="header__buttons">
+        <button id="undo-btn" class="header__button">
+          <img src="../assets/icons/undo.svg" />
+        </button>
+        <button id="settings-btn" class="header__button">
+          <img src="../assets/icons/settings.svg" />
+        </button>
+      </div>
+    </div>
+
+    <div class="kill-switch__container" aria-label="Toggle kill switch">
+      <div class="kill-switch__lever">
+        <div class="lever__bar">
+          <div class="lever__ball"></div>
+        </div>
+        <div class="lever__bottom">
+          <div class="lever__screw"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site__info">
+      <h2 class="site__info-url"></h2>
+      <p class="site__info-type"></p>
+    </div>
+
+    <div class="actions__container">
+      <button id="toggle-site-type-btn" class="actions__btn"></button>
+    </div>
+
+    <div class="extension__info">
+      <p>Press <strong>CTRL+Shift+K</strong> to toggle kill switch</p>
+      <p>Press <strong>CTRL+Shift+U</strong> to undo toggle kill switch</p>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

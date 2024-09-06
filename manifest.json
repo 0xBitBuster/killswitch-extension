@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "The Kill Switch",
+  "version": "1.0",
+  "description": "Kill Switch for pretending to be productive.",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "kill-switch": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Kill Switch"
+    },
+    "undo-kill-switch": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      }, 
+      "description": "Undo Kill Switch"
+    }
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  }
+}

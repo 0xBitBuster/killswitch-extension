@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | Kill Switch</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <img class="logo" src="../assets/images/logo.png" />
+
+  <div class="settings__container">
+    <div class="settings__item" data-link-to="shortcut-settings" aria-label="Shortcut for kill switch">
+      <div class="settings__item-info">
+        <h1>Kill Switch Toggle</h1>
+        <p class="text-gray">If this key is pressed, all unproductive tabs will be closed. You can <a href="#" class="link">change the shortcut here</a></p>
+      </div>
+      <strong>CTRL + Shift + K</strong>
+    </div>
+    <div class="settings__item" data-link-to="shortcut-settings" aria-label="Shortcut to undo the previous kill switch">
+      <div class="settings__item-info">
+        <h1>Undo Kill Switch</h1>
+        <p class="text-gray">If this key is pressed, all previously closed unproductive tabs will be re-opened. You can <a href="#" class="link">change the shortcut here</a></p>
+      </div>
+      <strong>CTRL + Shift + U</strong>
+    </div>
+  </div>
+
+  <div class="settings__blacklist">
+    <h1>Unproductive site list</h1>
+    <p class="text-gray">Only sites that are listed here will be closed upon the kill switch toggle.</p>
+    <textarea id="blacklist-textarea" class="settings__blacklist-textarea text-gray" spellcheck="false"></textarea>
+  </div>
+
+  <p class="footer">Made with ♥️ by <a href="https://github.com/0xBitBuster" target="_blank" class="link">0xBitBuster</a></p>
+
+  <script src="./options.js"></script>
+</body>
+</html>
