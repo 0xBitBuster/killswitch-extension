@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "The Kill Switch",
-  "version": "1.0",
-  "description": "Kill Switch for pretending to be productive.",
-  "permissions": ["tabs", "storage"],
+  "version": "1.1",
+  "description": "Instantly close unproductive websites and keep your focus in check while!",
+  "permissions": ["tabs", "storage", "browsingData"],
   "background": {
     "service_worker": "background.js",
     "type": "module"

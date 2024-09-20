@@ -20,6 +20,15 @@ const closeBlacklistedTabs = () => {
     killedTabUrls = tabsToClose.map(tab => tab.url);
     chrome.tabs.remove(tabIds);
   });
+
+  // Clear browsing history since last hour
+  const oneDayAgo = (new Date()).getTime() - (1000 * 60 * 60 * 1);
+  chrome.browsingData.remove({
+    since: oneDayAgo
+  }, {
+    history: true,
+    downloads: true,
+  })
 }
 
 /**
@@ -42,14 +51,13 @@ const setBlacklist = (newBlacklist) => {
 /**
  * Get blacklist
  */
-const getBlacklist = (sendResponse, domainsAsRegex) => {
+const getBlacklist = (domainsAsRegex) => {
   // Return as regex
   if (domainsAsRegex)
     return sendResponse({ blacklist })
 
   // Return domains as strings
-  const blacklistedDomains = blacklist.map(domain => convertToDomain(domain));
-  sendResponse({ blacklist: blacklistedDomains })
+  return blacklist.map(domain => convertToDomain(domain));
 }
 
 /**
@@ -110,7 +118,8 @@ const messageHandler = (request, sender, sendResponse) => {
       break;
 
     case "get-blacklist":
-      getBlacklist(sendResponse, request.domainsAsRegex);
+      const response = getBlacklist(request.domainsAsRegex);
+      sendResponse({ blacklist: response })
       break;
 
     case "set-blacklist":
